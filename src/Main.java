@@ -1,13 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        final String RESET = "\u001B[0m";
-        final String GREEN = "\u001B[32m";
-        final String YELLOW = "\u001B[33m";
+        CorrectWords correctWords = new CorrectWords();
+        Word userWord = new Word();
 
+        String correctFourLetterWord = correctWords.getFourLetterWord();
+        System.out.println("correctFourLetterWord = " + correctFourLetterWord);
 
+        boolean isCorrect = false;
+        int tries = 0;
+        while (!isCorrect && tries < 4) {
+            boolean correctLength = false;
+            while (!correctLength) {
+                System.out.println("Introduce a 4 letter word");
+                userWord.setUserWord(scanner.nextLine());
+                correctLength = userWord.checkLength(correctFourLetterWord);
+            }
 
+            isCorrect = userWord.checkUserWord(correctFourLetterWord);
+            System.out.println(userWord.showCorrection());
+            tries++;
+        }
     }
 }
