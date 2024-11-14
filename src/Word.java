@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Word {
     private String userWord;
-    private ArrayList<Integer> correctIndexes = new ArrayList<>();
-    private ArrayList<Integer> halfCorrectIndexes = new ArrayList<>();
+    private final ArrayList<Integer> correctIndexes = new ArrayList<>();
+    private final ArrayList<Integer> halfCorrectIndexes = new ArrayList<>();
     private final String RESET = "\u001B[0m";
     private final String GREEN = "\u001B[32m";
     private final String YELLOW = "\u001B[33m";
@@ -21,8 +21,8 @@ public class Word {
     }
 
     public boolean checkUserWord(String correctWord) {
-        char[] userWordChars = this.userWord.toCharArray();
-        char[] correctWordChars = correctWord.toCharArray();
+        char[] userWordChars = this.userWord.toLowerCase().toCharArray();
+        char[] correctWordChars = correctWord.toLowerCase().toCharArray();
         boolean[] usedCorrectChars = new boolean[correctWord.length()];
         this.correctIndexes.clear();
         this.halfCorrectIndexes.clear();
