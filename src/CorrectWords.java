@@ -101,22 +101,33 @@ public class CorrectWords {
         sevenLetter.add("thought");
     }
 
-    public String getFourLetterWord(){
+    public String getCorrectWord(int length) {
+        return switch (length) {
+            case 4 -> getFourLetterWord();
+            case 5 -> getFiveLetterWord();
+            case 6 -> getSixLetterWord();
+            case 7 -> getSevenLetterWord();
+            default -> "Invalid length";
+        };
+
+    }
+
+    private String getFourLetterWord(){
         initializeFourLetter();
         return this.fourLetter.get(this.random.nextInt(20));
     }
 
-    public String getFiveLetterWord(){
+    private String getFiveLetterWord(){
         initializeFiveLetter();
         return this.fiveLetter.get(this.random.nextInt(20));
     }
 
-    public String getSixLetterWord(){
+    private String getSixLetterWord(){
         initializeSixLetter();
         return this.sixLetter.get(this.random.nextInt(20));
     }
 
-    public String getSevenLetterWord(){
+    private String getSevenLetterWord(){
         initializeSevenLetter();
         return this.sevenLetter.get(this.random.nextInt(20));
     }
