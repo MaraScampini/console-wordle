@@ -39,8 +39,13 @@ public class Wordle {
         while (!correctLength) {
             System.out.println("Introduce a " + wordLength + " letter word");
             userWord.setUserWord(scanner.nextLine());
-            correctLength = userWord.checkLength(correctWord);
+            if(checkWordIsOnlyLetters()) correctLength = userWord.checkLength(correctWord);
+            else System.out.println("Only letters allowed!");
         }
+    }
+
+    public boolean checkWordIsOnlyLetters() {
+        return userWord.getUserWord().matches("^[a-zA-Z]+$");
     }
 
     public boolean decideToContinue() {
