@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("Welcome to my version of WORDLE!");
         System.out.println();
         System.out.println("You will get a four-letter word to start.");

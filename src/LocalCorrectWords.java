@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CorrectWords {
-
+public class LocalCorrectWords {
     private final ArrayList<String> fourLetter = new ArrayList<>();
     private final ArrayList<String> fiveLetter = new ArrayList<>();
     private final ArrayList<String> sixLetter = new ArrayList<>();
@@ -32,7 +31,7 @@ public class CorrectWords {
         fourLetter.add("wave");
     }
 
-    private void initializeFiveLetter(){
+    private void initializeFiveLetter() {
         fiveLetter.add("apple");
         fiveLetter.add("brave");
         fiveLetter.add("cloud");
@@ -55,7 +54,7 @@ public class CorrectWords {
         fiveLetter.add("table");
     }
 
-    private void initializeSixLetter(){
+    private void initializeSixLetter() {
         sixLetter.add("action");
         sixLetter.add("beauty");
         sixLetter.add("camera");
@@ -112,22 +111,22 @@ public class CorrectWords {
 
     }
 
-    private String getFourLetterWord(){
+    private String getFourLetterWord() {
         initializeFourLetter();
         return this.fourLetter.get(this.random.nextInt(20));
     }
 
-    private String getFiveLetterWord(){
+    private String getFiveLetterWord() {
         initializeFiveLetter();
         return this.fiveLetter.get(this.random.nextInt(20));
     }
 
-    private String getSixLetterWord(){
+    private String getSixLetterWord() {
         initializeSixLetter();
         return this.sixLetter.get(this.random.nextInt(20));
     }
 
-    private String getSevenLetterWord(){
+    private String getSevenLetterWord() {
         initializeSevenLetter();
         return this.sevenLetter.get(this.random.nextInt(20));
     }

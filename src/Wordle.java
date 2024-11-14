@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Wordle {
     private final Scanner scanner = new Scanner(System.in);
     private final Word userWord = new Word();
-    private final CorrectWords correctWords = new CorrectWords();
+    private final WordFetcher correctWords = new WordFetcher();
     private int wordLength = 4;
 
     public void play(){
         while (wordLength >= 4 && wordLength <= 7) {
-            String correctWord = correctWords.getCorrectWord(wordLength);
+            String correctWord = correctWords.getWord(wordLength);
             System.out.println("correctWord = " + correctWord);
 
             boolean isCorrect = false;
