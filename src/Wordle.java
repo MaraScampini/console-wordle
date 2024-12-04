@@ -10,17 +10,16 @@ public class Wordle {
         while (wordLength >= 4 && wordLength <= 7) {
             String correctWord = correctWords.getWord(wordLength);
             System.out.println("correctWord = " + correctWord);
-
             boolean isCorrect = false;
             int tries = 0;
-            while (!isCorrect && tries < wordLength) {
+            while (!isCorrect && tries < wordLength + 2) {
                 checkWordLength(correctWord);
                 isCorrect = userWord.checkUserWord(correctWord);
                 System.out.println(userWord.showCorrection());
                 tries++;
             }
 
-            if (isCorrect && wordLength != 7 && tries <= wordLength) {
+            if (isCorrect && wordLength != 7 && tries <= wordLength + 2) {
                 if (!decideToContinue()) break;
             } else if (isCorrect && wordLength == 7) {
                 break;
